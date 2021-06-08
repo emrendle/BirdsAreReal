@@ -1,3 +1,28 @@
+// tiny slider options/controls
+let slider = tns({
+  container: '.my-slider',
+  items: 1,
+  slideBy: 'page',
+  mouseDrag: 'mouseDrag',
+  gutter: 60,
+  edgePadding: 10,
+  nav: false,
+  autoplay: false,
+  // autoplayButton: '.auto',
+  // autoplayText: ['Start', 'Stop'],
+  controlsContainer: '#controls',
+  prevButton: '.previous',
+  nextButton: '.next',
+  responsive: {
+      800: {
+        items: 2
+      },
+      1000: {
+        items: 3
+      }
+    }
+});
+
 // returns location codes (ie, county names/codes) for Illinois (subnational2 is)
 const getLocCodes = () => {
   let myHeaders = new Headers();
@@ -35,13 +60,16 @@ const getBirds = (locCode) => {
     redirect: 'follow'
   };
 
-  fetch(`https://api.ebird.org/v2/data/obs/${locCode}/recent?maxResults=10`, requestOptions)
+  fetch(`https://api.ebird.org/v2/data/obs/${locCode}/recent?maxResults=100`, requestOptions)
     .then(response => {
         return response.json();
     })
     .then(data => {
       // empty arrays for storing the desired info from ebird
       let locations = [];
+
+      // consider destructuring your object here like this?
+      // const { name, role, age, forcePoints } = data;
 
       for (i = 0; i < data.length; i++) {
         let dataLat = data[i].lat;
@@ -92,4 +120,4 @@ function initMap(locations) {
   }
 }
 
-getLocCodes();
+// getLocCodes();

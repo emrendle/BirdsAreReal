@@ -4,16 +4,137 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NoIL Birds</title>
+    <title>BirdNerd | For the Bird-Curious</title>
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/0958c36ed4.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap v5.0 cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- tiny-slider files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <!-- my CSS file -->
     <link rel="stylesheet" type="text/css" href="assets/style.css"/>
 </head>
 <body>
-    <div id="map"></div>
+    <nav>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+          </ul>
+    </nav>
+    <main class="container">
+        <div class="row">
+            <!-- user selection -->
+            <section class="col-6 col-md-4 d-flex mt-2">
+                <!-- state dropdown -->
+                <select class="form-select m-2 h-25" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <!-- county dropdown -->
+                <select class="form-select m-2 h-25" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </section>
+            <!-- map container -->
+            <section class="col-md-8 mt-2">
+                <div id="map">
+                    <img src="https://picsum.photos/400">
+                </div>
+                <!-- playing w carousel -->
+                <div class="my-slider m-3">
+                    <div class="slide s01">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Card 1</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="slide s02">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Card 2</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="slide s03">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Card 3</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="slide s04">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Card 4</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="slide s05">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Card 5</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="slide s06">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Card 6</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+                  
+                  <div id="controls">
+                    <button class="previous btn btn-primary">Prev</button>
+                    <button class="next btn btn-primary">Next</button>
+                    <!-- <button class="auto btn btn-primary"></button> -->
+                  </div>
+                  
+                  <!-- playtime end -->
+            </section>
+        </div>
+    </main>
 
+    <!-- my js file -->
     <script src="assets/main.js"></script>
     <!-- removed initMap callback function to avoid map loading before location codes have been generated by ebird -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAs3k9TKjBGM8LpOITw_YbAXNMAIXAvU_A&&libraries=&v=weekly"></script>
-    <!-- OverlappingMarkerSpiderfier (OMS) cdn - resolves issue of multiple sightings with the sane lat/long -->
+    <!-- OverlappingMarkerSpiderfier (OMS) cdn - resolves issue of multiple sightings with the same lat/long -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier/1.0.3/oms.min.js"></script>
+    <!-- Bootstrap JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>
